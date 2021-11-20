@@ -464,4 +464,20 @@ body {
     cursor: pointer;
   }
 }
+
+.toggle-monthly {
+  left: 4px;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+}
+
+.toggle-yearly {
+  left: 25px;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+}
+
+.billing-monthly-accent, .billing-yearly-accent {
+  color: #293356;
+}
 /*# sourceMappingURL=style.css.map */

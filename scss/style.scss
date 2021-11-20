@@ -297,3 +297,19 @@ body {
         }
     }
 }
+
+//CLASSES FOR JS
+
+.toggle-monthly {
+    left:4px;
+    transition: left 0.5s; 
+}
+
+.toggle-yearly {
+    left:25px;
+    transition: left 0.5s;
+}
+
+.billing-monthly-accent, .billing-yearly-accent {
+    color:$color-heading;
+}
