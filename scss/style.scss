@@ -182,3 +182,118 @@ body {
         font-weight: 800;
     }
 }
+
+@media screen and (min-width:600px) {
+
+    .header {
+
+        &__container {
+            padding:10.4rem 0 27.4rem;
+        }
+
+        &__heading {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        &__subtitle-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__subtitle {
+            font-size: 1.5rem;
+        }
+
+        &__subtitle:first-child{
+            margin-right:0.8rem;
+        }
+    }
+
+    .main {
+        width:54rem;
+        top:-180px;
+
+        &__header {
+            padding:4rem 4.8rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+              "pageviews pricing"
+              "slider slider"
+              "billing billing"
+        }
+
+        &__billing {
+            right:23px;
+            grid-column: billing;
+            margin-top:0;
+        }
+
+        &__billing-toggle {
+            margin: 0 1.6rem;
+        }
+
+        &__billing-toggle:hover{
+            cursor: pointer;
+            background:$backgound-button-hover;
+        }
+
+        &__billing-discount {
+            margin-left:0.9rem;
+            width:80px;
+        }
+
+        &__billing-discount-dt {
+            display:inline;
+        }
+
+        &__pageviews {
+            font-size: 1.4rem;
+            grid-column: pageviews;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        &__pricing {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        &__slider {
+            grid-column: slider;
+            margin: 4rem 0 5.6rem;
+        }
+
+        &__slider-icon-container:hover {
+            cursor: pointer;
+            background:$background-slider-container-hover;
+        }
+
+        &__pricing-number {
+            font-size:4rem;
+        }
+
+        &__pricing-recurrence {
+            font-size:1.6rem;
+        }
+
+        &__list-and-button {
+            padding:3.2rem 4.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__list {
+            margin:0;
+            text-align: left;
+        }
+
+        &__button:hover {
+            color:white;
+            cursor: pointer;
+        }
+    }
+}

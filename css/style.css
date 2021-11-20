@@ -358,4 +358,110 @@ body {
   line-height: 1.6rem;
   font-weight: 800;
 }
+
+@media screen and (min-width: 600px) {
+  .header__container {
+    padding: 10.4rem 0 27.4rem;
+  }
+  .header__heading {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+  }
+  .header__subtitle-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header__subtitle {
+    font-size: 1.5rem;
+  }
+  .header__subtitle:first-child {
+    margin-right: 0.8rem;
+  }
+  .main {
+    width: 54rem;
+    top: -180px;
+  }
+  .main__header {
+    padding: 4rem 4.8rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "pageviews pricing" "slider slider" "billing billing";
+  }
+  .main__billing {
+    right: 23px;
+    grid-column: billing;
+    margin-top: 0;
+  }
+  .main__billing-toggle {
+    margin: 0 1.6rem;
+  }
+  .main__billing-toggle:hover {
+    cursor: pointer;
+    background: #a5f3eb;
+  }
+  .main__billing-discount {
+    margin-left: 0.9rem;
+    width: 80px;
+  }
+  .main__billing-discount-dt {
+    display: inline;
+  }
+  .main__pageviews {
+    font-size: 1.4rem;
+    grid-column: pageviews;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main__pricing {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+  .main__slider {
+    grid-column: slider;
+    margin: 4rem 0 5.6rem;
+  }
+  .main__slider-icon-container:hover {
+    cursor: pointer;
+    background: #a5f3eb;
+  }
+  .main__pricing-number {
+    font-size: 4rem;
+  }
+  .main__pricing-recurrence {
+    font-size: 1.6rem;
+  }
+  .main__list-and-button {
+    padding: 3.2rem 4.8rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main__list {
+    margin: 0;
+    text-align: left;
+  }
+  .main__button:hover {
+    color: white;
+    cursor: pointer;
+  }
+}
 /*# sourceMappingURL=style.css.map */
