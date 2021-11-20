@@ -2,5 +2,44 @@
 
 body {
     font-family: 'Manrope', sans-serif;
-    font-size:1.5rem;
+    font-size:1.2rem;
+    color:$color-text-main;
+    text-align: center;
+}
+
+.header {
+    background:url(../images/bg-pattern.svg) no-repeat left;
+    background-size:cover;
+
+    &__container {
+        background:url(../images/pattern-circles.svg) no-repeat center top;
+        background-position-y: 58px;
+        padding:8.9rem 2.4rem 23rem;
+    }
+
+    &__heading {
+        font-size:2rem;
+        font-weight: 800;
+        line-height: 2.7rem;
+        color:$color-heading;
+        margin-bottom:0.8rem;
+    }
+
+    &__subtitle {
+        font-size: 1.3rem;
+        line-height: 2.3rem;
+
+    }
+}
+
+.main {
+    background:$background-pricing-component;
+    box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.152073);
+    border-radius: 8px;
+    margin:auto;
+    padding:3.4rem 2.4rem 3.2rem;
+    position:relative;
+    top:-170px;
+    z-index: 10;
+    width:32.7rem;
 }
