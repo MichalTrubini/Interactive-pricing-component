@@ -37,9 +37,148 @@ body {
     box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.152073);
     border-radius: 8px;
     margin:auto;
-    padding:3.4rem 2.4rem 3.2rem;
     position:relative;
     top:-170px;
-    z-index: 10;
     width:32.7rem;
+
+    &__header {
+        padding:3.4rem 2.4rem 3.8rem;
+    }
+
+    &__pageviews {
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 1.71px;
+        line-height: 1.6rem;
+    }
+
+    &__pageviews-number {
+        margin-right:0.6rem;
+    }
+
+    &__slider {
+        width:100%;
+        height:8px;
+        background:$background-slider-empty;
+        border-radius: 5px;
+        margin:4rem 0;
+        position: relative;
+    }
+
+    &__slider-current {
+        width:50%;
+        height:8px;
+        border-radius: 5px;
+        background:$background-slider-full;
+    }
+
+    &__slider-icon-container {
+        background:$background-slider;
+        width:40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+        display: grid;
+        place-items: center;
+        position:absolute;
+        left:calc(50% - 20px);
+        top:-17px;
+    }
+
+    &__billing {
+        display:flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top:3.4rem;
+        position: relative;
+        right: -14px;;
+    }
+
+    &__billing-discount-dt {
+        display: none;
+    }
+
+    &__billing-recurrence {
+        line-height:1.6rem;
+    }
+
+    &__billing-toggle {
+        width:43px;
+        height:22px;
+        background:$background-toggle;
+        border-radius:15px;
+        position: relative;
+        margin: 0 1.2rem;
+    }
+
+    &__billing-toggle-circle {
+        width:14px;
+        height:14px;
+        background:white;
+        border-radius: 50%;
+        position:absolute;
+        top:4px;
+        left:4px;
+    }
+
+    &__billing-discount {
+        background:$background-discount;
+        line-height: 19px;
+        border-radius: 9.5px;
+        width:41px;
+        margin-left:0.55rem;
+        color:$color-discount;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+
+    &__pricing {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__pricing-number {
+        color:$color-heading;
+        font-weight: 800;
+        font-size: 3.2rem;
+    }
+
+    &__pricing-recurrence {
+        margin-left:1rem;
+    }
+
+    &__list-and-button {
+        padding:2.4rem 0 3.2rem;
+        border-top:1px solid #ECF0FB;
+    }
+
+    &__list {
+        list-style:none;
+        width:14.8rem;
+        margin: 0 auto 3.2rem;
+    }
+
+    &__list-item {
+        margin-bottom:1.1rem;
+        line-height: 1.6rem;
+    }
+
+    &__list-item:last-child {
+        margin-bottom: 0;
+    }
+
+    &__list-checkmark {
+        margin-right:1.6rem;
+    }
+
+    &__button {
+        border:none;
+        background:$background-button;
+        border-radius:20.5px;
+        color:$color-CTA-other;
+        padding:1.2rem 4.6rem;
+        line-height: 1.6rem;
+        font-weight: 800;
+    }
 }

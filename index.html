@@ -31,21 +31,27 @@
   <main class="main">
     <div class="main__header">
       <p class="main__pageviews"><span class="main__pageviews-number">100k</span>Pageviews</p>
-      <div class="main__slider"></div>
+      <div class="main__slider">
+        <div class="main__slider-current"></div>
+        <div class="main__slider-icon-container"><img src="images/icon-slider.svg" alt="slider" class="main__slider-icon"></div>
+      </div>
       <p class="main__pricing">
-        <span class="main__pricing-number">$ 16.00</span><span class="main__pricing-recurrence">/month</span>
+        <span class="main__pricing-number">$ 16.00</span><span class="main__pricing-recurrence">/ month</span>
       </p>
+      <div class="main__billing">
+        <p class="main__billing-recurrence">Monthly Billing</p>
+        <div class="main__billing-toggle">
+          <div class="main__billing-toggle-circle"></div>
+        </div>
+        <p class="main__billing-recurrence">Yearly Billing</p>
+        <p class="main__billing-discount">-25% <span class="main__billing-discount-dt">discount</span></p>
+      </div>
     </div>
-    <div class="main__billing">
-      Monthly Billing
-      Yearly Billing 25% discount
-    </div>
-  
     <div class="main__list-and-button">
       <ul class="main__list">
-        <li class="main__list-item">Unlimited websites</li>
-        <li class="main__list-item">100% data ownership</li>
-        <li class="main__list-item">Email reports</li>
+        <li class="main__list-item"><img src="images/icon-check.svg" alt="check" class="main__list-checkmark">Unlimited websites</li>
+        <li class="main__list-item"><img src="images/icon-check.svg" alt="check" class="main__list-checkmark">100% data ownership</li>
+        <li class="main__list-item"><img src="images/icon-check.svg" alt="check" class="main__list-checkmark">Email reports</li>
       </ul>
       <button type="button" class="main__button">
         Start my trial
