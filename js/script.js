@@ -12,16 +12,30 @@ function toggleAnimate() {
 
     if (toggleCircle.classList.contains('toggle-yearly')){
         toggleCircle.classList.remove('toggle-yearly');
+        toggleCircle.classList.add('toggle-monthly');
         monthlyBilling.classList.add('billing-monthly-accent');
         yearlyBilling.classList.remove('billing-yearly-accent');
     }
     else {
     toggleCircle.classList.add('toggle-yearly');
+    toggleCircle.classList.remove('toggle-monthly');
     monthlyBilling.classList.remove('billing-monthly-accent');
     yearlyBilling.classList.add('billing-yearly-accent');
     }
 }
 
+//YEARLY PRICING CALCULATION
+
+function calculateYearlyPrice(x) {
+    let discountedPriceMutliplier = (1 - 0.25);
+    let monthsInYear = 12;
+    let yearlyPrice = parseInt(x) * monthsInYear * discountedPriceMutliplier;
+    let pricingUi = document.querySelector('.main__pricing-number');
+
+    pricingUi.innerText = '$' + yearlyPrice + '.00';
+}
+
+//JQUERY SLIDER
 
 $( function() {
     $( ".main__slider" ).slider({
@@ -35,6 +49,7 @@ $( function() {
         let pageviewsUi = document.querySelector('.main__pageviews-number');
         let pricingUi = document.querySelector('.main__pricing-number');
         let toggleCircle = document.querySelector('.main__billing-toggle-circle');
+        let sliderWidthDynamic = document.querySelector('.main__slider-current');
 
         let pageviewsSlider = {
             0 : '10K',
@@ -44,19 +59,54 @@ $( function() {
             100 : '1M'
         }
         let pricingSlider = {
-            0 : '8',
-            25 : '12',
-            50 : '16',
-            75 : '24',
-            100 : '36'
+            0 : 8,
+            25 : 12,
+            50 : 16,
+            75 : 24,
+            100 : 36
+        }
+        let sliderWidth = {
+            0 : 0,
+            25 : 25,
+            50 : 50,
+            75 : 75,
+            100 : 100 
         }
 
         pageviewsUi.innerText = pageviewsSlider[selected];
+        sliderWidthDynamic.style.width = sliderWidth[selected] + '%';
         
         if (toggleCircle.classList.contains('toggle-monthly')) {
             pricingUi.innerText = '$' + pricingSlider[selected] + '.00';
         }
+        else {
+            calculateYearlyPrice(pricingSlider[selected]);
+        }
       } 
     });
-/*     $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) ); */
   } );
+
+//PRICE CORRECTION ON TOGGLE
+
+toggle.addEventListener('click',priceCorrection);
+
+function priceCorrection() {
+    let pageviewsUi = document.querySelector('.main__pageviews-number').innerText;
+    let pricingUi = document.querySelector('.main__pricing-number');
+    let toggleCircle = document.querySelector('.main__billing-toggle-circle');
+
+    let pricingMatrix = {
+        '10K' : 8,
+        '50K' : 12,
+        '100K' : 16,
+        '500K' : 24,
+        '1M' : 36
+    }
+
+    if (toggleCircle.classList.contains('toggle-yearly')) {
+        calculateYearlyPrice(pricingMatrix[pageviewsUi]);
+    }
+    else {
+        pricingUi.innerText = '$' + pricingMatrix[pageviewsUi] + '.00';
+    }
+}
