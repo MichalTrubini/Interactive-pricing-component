@@ -8,9 +8,7 @@ function toggleAnimate() {
 
     let toggleCircle = document.querySelector('.main__billing-toggle-circle');
     let monthlyBilling = document.querySelector('.billing-monthly');
-    let monthlyAccent = document.querySelector('.billing-monthly-accent');
     let yearlyBilling = document.querySelector('.billing-yearly');
-    let yearlyAccent = document.querySelector('.billing-yearly-accent');
 
     if (toggleCircle.classList.contains('toggle-yearly')){
         toggleCircle.classList.remove('toggle-yearly');
@@ -23,3 +21,42 @@ function toggleAnimate() {
     yearlyBilling.classList.add('billing-yearly-accent');
     }
 }
+
+
+$( function() {
+    $( ".main__slider" ).slider({
+      value:0,
+      min: 0,
+      max: 100,
+      step: 25,
+      slide: function( event, ui ) {
+
+        let selected= ui.value;
+        let pageviewsUi = document.querySelector('.main__pageviews-number');
+        let pricingUi = document.querySelector('.main__pricing-number');
+        let toggleCircle = document.querySelector('.main__billing-toggle-circle');
+
+        let pageviewsSlider = {
+            0 : '10K',
+            25 : '50K',
+            50 : '100K',
+            75 : '500k',
+            100 : '1M'
+        }
+        let pricingSlider = {
+            0 : '8',
+            25 : '12',
+            50 : '16',
+            75 : '24',
+            100 : '36'
+        }
+
+        pageviewsUi.innerText = pageviewsSlider[selected];
+        
+        if (toggleCircle.classList.contains('toggle-monthly')) {
+            pricingUi.innerText = '$' + pricingSlider[selected] + '.00';
+        }
+      } 
+    });
+/*     $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) ); */
+  } );
