@@ -28,8 +28,7 @@ function toggleAnimate() {
 
 function calculateYearlyPrice(x) {
     let discountedPriceMutliplier = (1 - 0.25);
-    let monthsInYear = 12;
-    let yearlyPrice = parseInt(x) * monthsInYear * discountedPriceMutliplier;
+    let yearlyPrice = parseInt(x) * discountedPriceMutliplier;
     let pricingUi = document.querySelector('.main__pricing-number');
 
     pricingUi.innerText = '$' + yearlyPrice + '.00';
